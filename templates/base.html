@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+<head>
+    <title>
+        {% block Judul %}
+
+        {% endblock Judul %}
+    </title>
+    {% include "snappets/styles.html" %}
+</head>
+<body>
+    {% include "snappets/navbar.html" %}  
+  
+
+  	<!-- Content Wrapper. Contains page content -->
+  	<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+	    <div class="content-header">
+	      <div class="container-fluid">
+	        <div class="row mb-2">
+	          <div class="col-sm-6">
+	            <h1 class="m-0 text-dark">
+				    {% block SubJudul %}
+				    	{{SubJudul}}
+				    {% endblock SubJudul %}
+    			</h1>
+	          </div><!-- /.col -->
+	        
+	        </div><!-- /.row -->
+	        <div class="row">
+	        	<div class="col-9" align="center">
+	        		
+		        	{% block contents %}
+
+	    			{% endblock contents %}
+	        	</div>
+	        </div>
+	      </div><!-- /.container-fluid -->
+	    </div>
+	 
+  	</div>
+
+    
+    
+  <!-- /.content-wrapper -->
+	  <footer class="main-footer d-flex justify-content-end">
+	    <strong>Anisa</strong>
+	  </footer>
+
+    {% include "snappets/scripts.html" %}
+</body>
+</html> 

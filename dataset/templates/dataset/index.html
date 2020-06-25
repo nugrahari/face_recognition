@@ -1,0 +1,40 @@
+{%extends "base.html"%}
+
+{% block Judul %}
+    {{Judul}}
+{% endblock Judul %}
+
+{% block SubJudul %}
+    {{SubJudul}}
+{% endblock SubJudul %}
+
+{% block contents %}
+    <!-- {{Content}} -->
+    <table border="5" class="table" align="center">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>LBP Hist</th>
+                <th>Name Image</th>
+                <th>Label</th>
+                <th>Gambar</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for data in tb_dataTraining%}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{data.lbp_hist}}</td>
+                    <td>{{data.image}}</td>
+                    <td>{{data.label}}</td>
+                    <td><img width="50%" src="{{data.directory}}" alt="img"></td>
+                    <td><a href="{% url 'delete_dataset' id=data.id %}"><button class="btn btn-danger">Delete</button></a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/dataset/upload"><button class="btn btn-info">Tambah Data</button></a>
+    
+{% endblock contents %}
