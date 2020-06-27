@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'dataset',
+    'testing',
     'rest_framework',
+
 ]
 
 MIDDLEWARE = [

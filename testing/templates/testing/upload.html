@@ -1,0 +1,33 @@
+{%extends "base.html"%}
+
+{% block Judul %}
+    {{Judul}}
+{% endblock Judul %}
+
+{% block SubJudul %}
+    {{SubJudul}}
+{% endblock SubJudul %}
+
+{% block contents %}
+    <!-- {{Content}} -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table}}
+        </table>
+        <button type="submit">Upload Gambar</button>
+    </form>
+    <!-- <a href="/dataset/upload"><button class="btn btn-info">Tambah</button></a> -->
+    <table>
+        <tr>
+            <td>Result</td>
+        </tr>
+        <tr>    
+            <td><img width="50%" src="{{directory}}" alt="img"></td>
+        </tr>
+        <tr>
+            <td><h4>{{hasil}}</h4></td>
+        </tr>
+    </table>
+    
+{% endblock contents %}

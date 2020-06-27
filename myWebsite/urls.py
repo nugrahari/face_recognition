@@ -10,6 +10,7 @@ from django.urls import path, include
 from home import views as home_views
 
 from dataset import views as dataset_views
+from testing import views as testing_views
 router = routers.DefaultRouter()
 router.register('datasets', dataset_views.APIView)
 
@@ -23,6 +24,11 @@ urlpatterns = [
     path('dataset/upload', dataset_views.upload, name="upload_dataset"),
     path('dataset/delete/<int:id>', dataset_views.delete, name="delete_dataset"),
     path('dataset/API', include(router.urls)),
+
+
+    path('testing/', testing_views.index, name="testing"),
+    path('testing/upload', testing_views.upload, name="upload_datatest"),
+
 ]
 
 # urlpatterns += routers.urls
