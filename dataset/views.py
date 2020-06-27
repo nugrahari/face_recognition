@@ -84,6 +84,12 @@ def upload(request):
 def delete(request, id):
 	
 	tb_dataTraining = Dataset.objects.get(id = id)
+	try:
+		# dir_path = os.path.dirname(os.path.realpath(__file__))
+		filepath = os.path.join(MEDIA_ROOT,tb_dataTraining.image)
+		os.remove(filepath)
+	except:
+		print('gagal hapus file')
 	tb_dataTraining.delete()
 	
 	return redirect('dataset')

@@ -27,7 +27,10 @@ urlpatterns = [
 
 
     path('testing/', testing_views.index, name="testing"),
-    path('testing/upload', testing_views.upload, name="upload_datatest"),
+    path('testing/upload', testing_views.upload, name="upload_dataTesting"),
+    path('testing/delete/<int:id>', testing_views.delete, name="delete_dataTesting"),
+
+
 
 ]
 

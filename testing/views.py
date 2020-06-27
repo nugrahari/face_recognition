@@ -6,7 +6,7 @@ from django.core.files.storage import FileSystemStorage
 from myWebsite.settings import MEDIA_ROOT
 
 import cv2
-import os
+import os, sys
 
 from lib.main_function import get_lbpImg, get_kNN_clasification
 from lib.database import DB
@@ -50,7 +50,6 @@ def upload(request):
 		directory = fs.url(name)
 		# get directory OS
 		file_name = os.path.join(MEDIA_ROOT,uploaded_file.name)
-
 		# load image
 		img = cv2.imread(file_name)
 		# get LBP
@@ -87,3 +86,17 @@ def upload(request):
         'form'	: form
     }
 	return render(request, 'testing/upload.html', context)
+
+def delete(request, id):
+
+	dt = DataTesting.objects.get(id = id)
+	
+	try:
+		# dir_path = os.path.dirname(os.path.realpath(__file__))
+		filepath = os.path.join(MEDIA_ROOT,dt.image)
+		os.remove(filepath)
+	except:
+		print('gagal hapus file')
+	dt.delete()
+	
+	return redirect('testing')
