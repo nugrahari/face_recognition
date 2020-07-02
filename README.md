@@ -7,7 +7,7 @@ hasil LBP dilakukan klasifikasi menggunakan KNN.
 # Critical Requirement:
 
 Django==3.0.7
-djangorestframework==3.11.0
+\ndjangorestframework==3.11.0
 imutils==0.5.3
 matplotlib==3.2.1
 numpy==1.16.4
