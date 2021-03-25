@@ -57,7 +57,7 @@ python-dotenv==0.10.3
 python-json-logger==0.1.11
 pytz==2019.3
 PyWavelets==1.1.1
-PyYAML==5.3.1
+PyYAML==5.4
 requests==2.23.0
 scikit-image==0.16.2
 scikit-learn==0.22.2.post1
