@@ -35,7 +35,7 @@ mccabe==0.6.1
 more-itertools==8.2.0
 mxnet==1.6.0
 networkx==2.4
-numpy==1.16.4
+numpy==1.22.0
 opencv-contrib-python==4.1.0.25
 opencv-python==4.2.0.34
 packaging==20.3
